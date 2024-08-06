@@ -34,9 +34,10 @@ const useProducts = () => {
 export const Home = () => {
   const { products, error, loading } = useProducts();
   return (
-    <div>
+    <>
       <Navbar />
+
       <Banner />
-    </div>
+    </>
   );
 };
