@@ -1,0 +1,47 @@
+h1 {
+  margin: 20px;
+}
+h2 {
+  font-size: 1.1rem;
+}
+h3 {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+#title {
+  min-height: 60px;
+}
+#description {
+  height: 69px;
+  overflow: hidden; /* Hide the overflow text */
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Number of lines to show */
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.products {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 20px 40px;
+  align-items: center;
+  justify-content: center;
+}
+.product {
+  max-width: 320px;
+  max-height: 500px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+.product img {
+  width: 300px;
+  max-height: 400px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}

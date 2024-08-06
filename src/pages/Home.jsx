@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "../styles/Home.css";
 import { Navbar } from "../components/Navbar";
 import { Banner } from "../components/Banner";
+import { Products } from "../components/Products";
 
 const useProducts = () => {
   const [products, setProducts] = useState(null);
@@ -11,7 +12,7 @@ const useProducts = () => {
     const getProducts = async () => {
       try {
         const response = await fetch(
-          "https://api.escuelajs.co/api/v1/products?offset=0&limit=10"
+          "https://api.escuelajs.co/api/v1/products?offset=8&limit=8"
         );
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
@@ -36,8 +37,8 @@ export const Home = () => {
   return (
     <>
       <Navbar />
-
       <Banner />
+      <Products products={products} error={error} loading={loading} />
     </>
   );
 };

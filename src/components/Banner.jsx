@@ -10,7 +10,7 @@ export const Banner = () => {
         autoPlay={true}
         showArrows={false}
         centerMode={true}
-        centerSlidePercentage={104}
+        centerSlidePercentage={102}
         dynamicHeight={false}
       >
         <div>

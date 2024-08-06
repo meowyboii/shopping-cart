@@ -14,6 +14,7 @@ export const Navbar = () => {
           </li>
           <li>New</li>
           <li>Textile</li>
+          <li>Gadgets</li>
           <li>Sneakers</li>
           <li>Accessory</li>
         </ul>
