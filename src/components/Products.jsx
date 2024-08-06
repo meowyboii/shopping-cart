@@ -6,6 +6,8 @@ export const Products = ({ products, error, loading }) => {
     <div className={styles.container}>
       <h1>Products</h1>
       <div className={styles.products}>
+        {error && <span className={styles.error}>{error}</span>}
+        {loading && <span>Products are loading...</span>}
         {products?.map((product) => (
           <ProductCard
             key={product.id}

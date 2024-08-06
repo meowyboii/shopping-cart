@@ -8,6 +8,9 @@ h3 {
   font-size: 0.9rem;
   font-weight: 500;
 }
+.error {
+  color: red;
+}
 #title {
   min-height: 60px;
 }
