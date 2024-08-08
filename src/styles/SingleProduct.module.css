@@ -10,12 +10,12 @@ form {
   margin-top: 20px;
   height: 50px;
 }
-input {
+form > input {
   height: 100%;
   background-color: rgb(224, 224, 224);
   width: 70px;
   border-radius: 0;
-  margin-right: 20px;
+  margin-right: 10px;
   font-size: 1rem;
   font-weight: 600;
   text-align: center;
@@ -29,7 +29,7 @@ button {
   font-size: 1rem;
   font-weight: 600;
   border: 0;
-  width: 300px;
+  width: 280px;
 }
 .container {
   padding: 50px;

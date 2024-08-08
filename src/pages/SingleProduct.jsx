@@ -66,7 +66,7 @@ export const SingleProduct = () => {
                 <input
                   type="number"
                   name="quantity"
-                  id="quantity"
+                  id={style.quantit}
                   required
                   min={1}
                   max={50}
