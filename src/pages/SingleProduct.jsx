@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import styles from "../styles/Products.module.css";
+import style from "../styles/SingleProduct.module.css";
+import { Navbar } from "../components/Navbar";
 
 const useProduct = () => {
   const { id } = useParams();
@@ -25,7 +27,6 @@ const useProduct = () => {
         setError(error.message);
       } finally {
         setLoading(false);
-        console.log(product);
       }
     };
     getProduct();
@@ -35,18 +36,35 @@ const useProduct = () => {
 
 export const SingleProduct = () => {
   const { product, error, loading } = useProduct();
+  const [quantity, setQuantity] = useState(1);
+
+  const handleSubmit = () => {
+    console.log(quantity);
+  };
+
   return (
-    <div className={styles.container}>
-      {error && <span className={styles.error}>{error}</span>}
-      {loading && <span>Product is still loading...</span>}
-      {product && (
-        <div className={styles.product}>
-          <img src={product.images[0]} alt={product.title} />
-          <h2 id={styles.title}>{product.title}</h2>
-          <h3 id={styles.description}>{product.description}</h3>
-          <p>$ {product.price}</p>
-        </div>
-      )}
-    </div>
+    <>
+      <Navbar />
+      <div className={style.container}>
+        {error && <span className={styles.error}>{error}</span>}
+        {loading && <span>Product is still loading...</span>}
+        {product && (
+          <div className={style.product}>
+            <img src={product.images[0]} alt={product.title} />
+            <div className={style["product-details"]}>
+              <h2>{product.title}</h2>
+              <h2>${product.price}</h2>
+              <h3>{product.description}</h3>
+              <hr></hr>
+              <div className={style.images}>
+                {product.images.map((image, index) => (
+                  <img key={index} src={image} alt="" />
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+    </>
   );
 };

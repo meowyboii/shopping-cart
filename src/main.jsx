@@ -4,7 +4,7 @@ import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Home } from "./pages/Home.jsx";
 import { ShoppingCart } from "./pages/ShoppingCart.jsx";
-import { SingleProduct } from "./components/SingleProduct.jsx";
+import { SingleProduct } from "./pages/SingleProduct.jsx";
 
 const router = createBrowserRouter([
   {
