@@ -1,12 +1,13 @@
 import styles from "../styles/Products.module.css";
+import { Link } from "react-router-dom";
 
-export const ProductCard = ({ title, price, description, image }) => {
+export const ProductCard = ({ id, title, price, description, image }) => {
   return (
-    <div className={styles.product}>
+    <Link to={`product/${id}`} className={styles.product}>
       <img src={image} alt={title} />
       <h2 id={styles.title}>{title}</h2>
       <h3 id={styles.description}>{description}</h3>
-      <span>$ {price}</span>
-    </div>
+      <p>$ {price}</p>
+    </Link>
   );
 };

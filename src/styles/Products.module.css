@@ -8,6 +8,10 @@ h3 {
   font-size: 0.9rem;
   font-weight: 500;
 }
+span {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
 .error {
   color: red;
 }
