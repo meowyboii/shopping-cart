@@ -30,7 +30,7 @@ const useProduct = () => {
       }
     };
     getProduct();
-  }, []);
+  }, [id]);
   return { product, error, loading };
 };
 
@@ -38,7 +38,8 @@ export const SingleProduct = () => {
   const { product, error, loading } = useProduct();
   const [quantity, setQuantity] = useState(1);
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
     console.log(quantity);
   };
 
@@ -61,6 +62,21 @@ export const SingleProduct = () => {
                   <img key={index} src={image} alt="" />
                 ))}
               </div>
+              <form method="post">
+                <input
+                  type="number"
+                  name="quantity"
+                  id="quantity"
+                  required
+                  min={1}
+                  max={50}
+                  value={quantity}
+                  onChange={(e) => setQuantity(e.target.value)}
+                />
+                <button type="submit" onClick={handleSubmit}>
+                  Add to Cart
+                </button>
+              </form>
             </div>
           </div>
         )}
